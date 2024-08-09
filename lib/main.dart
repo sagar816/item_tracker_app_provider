@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:item_tracker_app_provider/page/home_page.dart';
+import 'package:item_tracker_app_provider/provider/items.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,14 +14,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'To Do List',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (context) => ItemsProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'To Do List',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
+          useMaterial3: true,
+        ),
+        home: HomePage(),
       ),
-      home: HomePage(),
     );
   }
 }

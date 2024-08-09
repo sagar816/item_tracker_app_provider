@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:item_tracker_app_provider/widget/item_form_widget.dart';
 
 class AddItemDialogWidget extends StatefulWidget {
   const AddItemDialogWidget({super.key});
@@ -13,7 +14,26 @@ class _AddItemDialogWidgetState extends State<AddItemDialogWidget> {
   String description = '';
 
   @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+  Widget build(BuildContext context) => AlertDialog(
+          content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Add ToDo',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 22,
+            ),
+          ),
+
+          const SizedBox(height: 8,),
+
+          ItemFormWidget( 
+            onChangedTitle: (title) => setState(() => this.title = title),
+            onChangedDescription: (description) => setState( () => this.description = description),
+            onSavedItem: (){},
+          ),
+        ],
+      ));
 }

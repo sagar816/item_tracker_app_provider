@@ -5,11 +5,11 @@ class ItemsProvider extends ChangeNotifier {
   List<Item> _items = [
     Item(
       createdTime: DateTime.now(),
-      title: "See you Cat",
-      description: '''- meow ''',
+      title: "Sample Data",
+      description: '- sample 01',
     ),
-    Item(createdTime: DateTime.now(), title: "Dog", description: "- bark"),
-    Item(createdTime: DateTime.now(), title: "Sparroe", description: "- chirp"),
+    // Item(createdTime: DateTime.now(), title: "Dog", description: "- bark"),
+    // Item(createdTime: DateTime.now(), title: "Sparroe", description: "- chirp"),
   ];
 
   List<Item> get items => _items.where((item) => item.isDone == false).toList();

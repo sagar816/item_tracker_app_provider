@@ -9,7 +9,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  static final String title = "Todo App";
+  static final String title = "Item Tracker App";
 
   // This widget is the root of your application.
   @override
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       create: (context) => ItemsProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'To Do List',
+        title: 'Item Tracker',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
           useMaterial3: true,

@@ -33,7 +33,9 @@ class ItemWidget extends StatelessWidget {
 
                     Utils.showSnackBar(
                       context,
-                      isDone ? 'Task completed' : 'Task marked incomplete',
+                      isDone
+                          ? 'Tracking completed'
+                          : 'Tracking marked incomplete',
                     );
                   }, //logic to change item.isDone state
                 ),

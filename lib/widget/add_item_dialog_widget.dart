@@ -26,7 +26,7 @@ class _AddItemDialogWidgetState extends State<AddItemDialogWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Add ToDo',
+              'Add Items',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,

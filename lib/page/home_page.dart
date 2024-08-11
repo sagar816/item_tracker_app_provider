@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:item_tracker_app_provider/main.dart';
 import 'package:item_tracker_app_provider/widget/add_item_dialog_widget.dart';
+import 'package:item_tracker_app_provider/widget/completed_list_widget.dart';
 import 'package:item_tracker_app_provider/widget/item_list_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final tabs = [
       ItemListWidget(),
-      Container(),
+      CompletedListWidget(),
     ];
 
     return Scaffold(
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.fact_check_outlined),
-              label: 'Todos',
+              label: 'Items',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.done),
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
         ),
         child: Icon(Icons.add),
       ),
-      body: ItemListWidget(),
+      body: tabs[selectedIndex],
     );
   }
 }

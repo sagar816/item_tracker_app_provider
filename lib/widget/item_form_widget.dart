@@ -42,14 +42,14 @@ class ItemFormWidget extends StatelessWidget {
         validator: (title) {
           if (title!.isEmpty) {
             //checking that the value is not null before invocation
-            return "The title cannot be empty";
+            return "The name cannot be empty";
           }
           return null;
         },
 
         decoration: InputDecoration(
           border: UnderlineInputBorder(),
-          labelText: 'Title',
+          labelText: 'Name',
         ),
       );
 
